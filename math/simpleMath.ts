@@ -1,12 +1,10 @@
+import { RandomGenerator } from './randomGenerator';
+
 export class SimpleMath {
 
-    private getRandomInt (max) {
-        return Math.floor(Math.random() * Math.floor(max));
-    }
-
     public generateAdditionProblem() {
-        let x = this.getRandomInt(100);
-        let y = this.getRandomInt(100);
+        let x = RandomGenerator.getRandomInt(100);
+        let y = RandomGenerator.getRandomInt(100);
 
         console.log(x + " + " + y);
         
@@ -17,8 +15,8 @@ export class SimpleMath {
     }
 
     public generateSubtractionProblem(){
-        let x = this.getRandomInt(100);
-        let y = this.getRandomInt(100);
+        let x = RandomGenerator.getRandomInt(100);
+        let y = RandomGenerator.getRandomInt(100);
 
         console.log(x + " - " + y);
         
@@ -28,8 +26,8 @@ export class SimpleMath {
     }
 
     public generateMultiplyProblem() {
-        let x = this.getRandomInt(100);
-        let y = this.getRandomInt(100);
+        let x = RandomGenerator.getRandomInt(100);
+        let y = RandomGenerator.getRandomInt(100);
 
         console.log(x + " * " + y);
         
@@ -39,8 +37,8 @@ export class SimpleMath {
     }
 
     public generateDivideProblem(){
-        let x = this.getRandomInt(100);
-        let y = this.getRandomInt(100);
+        let x = RandomGenerator.getRandomInt(100);
+        let y = RandomGenerator.getRandomInt(100);
 
         console.log(x + " / " + y);
         
