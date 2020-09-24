@@ -7,11 +7,11 @@ export class SimpleMath {
         let y = RandomGenerator.getRandomInt(100);
 
         console.log(x + " + " + y);
-        
+        let question = x + " + " + y;
         let answer = x + y; 
         
         console.log("Solution is: " + answer);
-
+        return [question, answer];
     }
 
     public generateSubtractionProblem(){
