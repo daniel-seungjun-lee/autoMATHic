@@ -1,7 +1,6 @@
 import { RandomGenerator } from './randomGenerator';
 
 export class SimpleMath {
-
     public generateAdditionProblem(digit: number , num: number) {
         let question = "";
         let answer = 0;
@@ -30,42 +29,45 @@ export class SimpleMath {
         return [question, answer]
     }
 
-    public generateSubtractionProblem(){
+    public generateSubtractionProblem() {
         let x = RandomGenerator.getRandomInt(100);
         let y = RandomGenerator.getRandomInt(100);
 
-        console.log(x + " - " + y);
-        
-        let answer = x - y; 
-        
-        console.log("Solution is: " + answer);
+        console.log(x + ' - ' + y);
+
+        let question = x + ' - ' + y;
+        let answer = x - y;
+
+        console.log('Solution is: ' + answer);
+
+        return [question, answer];
     }
 
     public generateMultiplyProblem() {
         let x = RandomGenerator.getRandomInt(100);
         let y = RandomGenerator.getRandomInt(100);
 
-        console.log(x + " * " + y);
-        
-        let answer = x * y; 
-        
-        console.log("Solution is: " + answer);
+        console.log(x + ' * ' + y);
+
+        let question = x + ' * ' + y;
+        let answer = x * y;
+
+        console.log('Solution is: ' + answer);
+
+        return [question, answer];
     }
 
-    public generateDivideProblem(){
+    public generateDivideProblem() {
         let x = RandomGenerator.getRandomInt(100);
         let y = RandomGenerator.getRandomInt(100);
 
-        console.log(x + " / " + y);
-        
-        let answer = x / y; 
-        
-        console.log("Solution is: " + answer);
+        console.log(x + ' / ' + y);
+
+        let question = x + ' / ' + y;
+        let answer = x / y;
+
+        console.log('Solution is: ' + answer);
+
+        return [question, answer];
     }
 }
-
-let simpleMath = new SimpleMath();
-simpleMath.generateAdditionProblem(2, 3);
-/*simpleMath.generateSubtractionProblem();
-simpleMath.generateMultiplyProblem();
-simpleMath.generateDivideProblem();*/

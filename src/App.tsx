@@ -1,24 +1,32 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { SimpleMath } from './math/simpleMath'
+import { Header } from './components/header';
+import { SimpleMathButton } from './components/simple-math';
+import { CustomTextbox } from './components/custom-textbox';
+// import ButtonBase from './components/ButtonBase';
 
 function App() {
-  let simpleMath = new SimpleMath();
-  let val = simpleMath.generateAdditionProblem(2, 3);
+  const [problem, setProblem] = React.useState('');
+  let changeProblem = (newProblem: string) => {
+    setProblem(newProblem);
+  };
+
+  const [answer, setAnswer] = React.useState('');
+  let saveAnswer = (newAnswer: string) => {
+    setAnswer(newAnswer);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        {/* <img src={logo} className="App-logo" alt="logo" /> */}
-        <p>
-          Question: {val[0]}
-        </p>
-        <p>
-          Answer:  {val[1]}
-        </p>
-      </header>
+      <Header text="Welcome" />
+      <SimpleMathButton text="Get Addition" type="addition" replace={changeProblem} save={saveAnswer} />
+      <SimpleMathButton text="Get Multiplication" type="multiplication" replace={changeProblem} save={saveAnswer} />
+      <CustomTextbox text="Answer" answer={answer} />
+      <div>{problem}</div>
     </div>
   );
 }
 
+// {/* <img src={logo} className="App-logo" alt="logo" /> */}
 export default App;
