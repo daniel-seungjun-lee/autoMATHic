@@ -5,7 +5,7 @@ import { SimpleMath } from './math/simpleMath'
 
 function App() {
   let simpleMath = new SimpleMath();
-  let val = simpleMath.generateAdditionProblem();
+  let val = simpleMath.generateAdditionProblem(2, 3);
   return (
     <div className="App">
       <header className="App-header">
