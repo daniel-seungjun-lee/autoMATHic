@@ -1,73 +1,73 @@
 import { RandomGenerator } from './randomGenerator';
 
 export class SimpleMath {
-    public generateAdditionProblem(digit: number , num: number) {
-        let question = "";
-        let answer = 0;
-        let tmp;
-        let list = new Array ();
-        
-        //Generates random numbers and saves it to the array
-        for (let i = 0; i < num; i++){
-            tmp = RandomGenerator.getRandomInt(Math.pow(10,digit));
-            list[i] = tmp;
-        }
-        
-        //print out the question
-        question = list[0];
-        for (let i = 1; i < num; i++) {
-            question += " + " + list[i];
-        }
+  public generateAdditionProblem(digit: number, num: number) {
+    let question = '';
+    let answer = 0;
+    let tmp;
+    let list = new Array();
 
-        for (let i = 0; i < num; i++){
-            let temp = list[i];
-            answer = answer + temp;
-        }
-        console.log("Question " + question);
-        console.log("Solution " + answer);
-
-        return [question, answer]
+    //Generates random numbers and saves it to the array
+    for (let i = 0; i < num; i++) {
+      tmp = RandomGenerator.getRandomInt(0, Math.pow(10, digit));
+      list[i] = tmp;
     }
 
-    public generateSubtractionProblem() {
-        let x = RandomGenerator.getRandomInt(100);
-        let y = RandomGenerator.getRandomInt(100);
-
-        console.log(x + ' - ' + y);
-
-        let question = x + ' - ' + y;
-        let answer = x - y;
-
-        console.log('Solution is: ' + answer);
-
-        return [question, answer];
+    //print out the question
+    question = list[0];
+    for (let i = 1; i < num; i++) {
+      question += ' + ' + list[i];
     }
 
-    public generateMultiplyProblem() {
-        let x = RandomGenerator.getRandomInt(100);
-        let y = RandomGenerator.getRandomInt(100);
-
-        console.log(x + ' * ' + y);
-
-        let question = x + ' * ' + y;
-        let answer = x * y;
-
-        console.log('Solution is: ' + answer);
-
-        return [question, answer];
+    for (let i = 0; i < num; i++) {
+      let temp = list[i];
+      answer = answer + temp;
     }
+    console.log('Question ' + question);
+    console.log('Solution ' + answer);
 
-    public generateDivideProblem() {
-        let x = RandomGenerator.getRandomInt(100);
-        let y = RandomGenerator.getRandomInt(100);
+    return [question, answer];
+  }
 
-        console.log(x + ' / ' + y);
+  public generateSubtractionProblem() {
+    let x = RandomGenerator.getRandomInt(0, 100);
+    let y = RandomGenerator.getRandomInt(0, 100);
 
-        let question = x + ' / ' + y;
-        let answer = x / y;
+    console.log(x + ' - ' + y);
 
-        console.log('Solution is: ' + answer);
+    let question = x + ' - ' + y;
+    let answer = x - y;
 
-        return [question, answer];
-    }
+    console.log('Solution is: ' + answer);
+
+    return [question, answer];
+  }
+
+  public generateMultiplyProblem() {
+    let x = RandomGenerator.getRandomInt(0, 100);
+    let y = RandomGenerator.getRandomInt(0, 100);
+
+    console.log(x + ' * ' + y);
+
+    let question = x + ' * ' + y;
+    let answer = x * y;
+
+    console.log('Solution is: ' + answer);
+
+    return [question, answer];
+  }
+
+  public generateDivideProblem() {
+    let x = RandomGenerator.getRandomInt(0, 100);
+    let y = RandomGenerator.getRandomInt(0, 100);
+
+    console.log(x + ' / ' + y);
+
+    let question = x + ' / ' + y;
+    let answer = x / y;
+
+    console.log('Solution is: ' + answer);
+
+    return [question, answer];
+  }
 }

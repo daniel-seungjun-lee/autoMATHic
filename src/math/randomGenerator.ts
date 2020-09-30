@@ -1,7 +1,5 @@
 export const RandomGenerator = {
-    
-    getRandomInt (max: number) {
-        return Math.floor(Math.random() * Math.floor(max));
-    }
-    
-}
+  getRandomInt(min: number, max: number) {
+    return Math.floor(Math.random() * (max - min)) + min;
+  },
+};
